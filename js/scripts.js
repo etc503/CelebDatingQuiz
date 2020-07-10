@@ -1,26 +1,19 @@
-$(document).ready(function() {
-  $("form#preference").submit(function() {
+$(document).ready(function () {
+  $("form#preference").submit(function (event) {
     event.preventDefault();
-    const animal = $("select#animal").val();
-    const place = $("select#place").val();
-    const transpo = $("select#transpo").val();
+    const animal = $("#animal").val();
+    const place = $("#place").val();
+    const transpo = $("#transpo").val();
+    // const beverage = $("#beverage").val();
+    console.log(animal + place + transpo);
 
-    let congrats = $("Keanu Reeves");
+    let match;
     if (animal === 'cat' && place === "ocean" && transpo === "drive") {
+      console.log("hello, this if statement is working");
+      match = "Keanu Reeves";
     }
 
-    let congrats = $("Bill Murray");
-    if (animal === 'cat' && place === "ocean" && transpo === "fly") {
-    }
-
-    let congrats = $("Parker Posey");
-    if (animal === 'cat' && place === "lake" && transpo === "drive" || "fly") {
-    }
-
-
-    $("#congrats").text(quote);
-    $("#match").show()
-
-  
+    $("#match").text(match);
+    $("#congrats").show();
   });
 });

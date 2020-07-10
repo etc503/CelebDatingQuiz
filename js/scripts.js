@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  $("form#preference").submit(function(event) {
+  $("form#preference").submit(function() {
+    event.preventDefault();
     const animal = $("select#animal").val();
     const place = $("select#place").val();
     const transpo = $("select#transpo").val();
@@ -20,6 +21,6 @@ $(document).ready(function() {
     $("#congrats").text(quote);
     $("#match").show()
 
-    event.preventDefault();
+  
   });
 });
